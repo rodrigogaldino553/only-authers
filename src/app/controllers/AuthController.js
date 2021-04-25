@@ -11,9 +11,9 @@ function generateToken(params = {}) {
 
 module.exports = {
     async registerUser(req, res) {
-        const { name, email, password, photo, description } = req.body
+        const { name, email, password } = req.body
 
-        const userData = [name, email, password, photo, description]
+        const userData = [name, email, password]
 
         try {
             //toda a interacao com o db
@@ -28,7 +28,7 @@ module.exports = {
             }
 
             await db.createUser(userData)
-            password = undefined
+            
             const user = await db.getUser('email', email)
             console.log(user)
             const token = generateToken({ id: user.id })

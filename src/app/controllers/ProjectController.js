@@ -7,15 +7,15 @@ const router = express.Router()
 router.use(authMiddleware)
 
 router.get('/', (req, res) => {
-    res.send('Hello World!', req.userId)
+    res.send(`Hello World! ${req.userId}`)
 })
 
-router.get('/books', (req, res) => {
-    res.send('Amor e odio, 1994, Desinformacao')
+router.get('/home', (req, res) => {
+    res.send('You are on home')
 })
 
 
-module.exports = app => app.use('/projects', router)
+module.exports = app => app.use('/authorizated', router)
 
 
 

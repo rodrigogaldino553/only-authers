@@ -9,7 +9,7 @@ async function connect(){
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'auth-example'
+        database: 'auther'
     })
 
     console.log('connection ready!')

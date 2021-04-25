@@ -8,7 +8,7 @@ const interactions = {
         const connection = await db.connect()
         const hash = bcrypt.hashSync(user[2])
         user[2] = hash
-        const sql = 'INSERT INTO users(name, email, password, photo, description) VALUES(?, ?, ?, ?, ?);'
+        const sql = 'INSERT INTO users(name, email, password) VALUES(?, ?, ?);'
 
         await connection.query(sql, user)
 
@@ -16,7 +16,7 @@ const interactions = {
 
     async selectUsers() {
         const connection = await db.connect()
-        const sql = 'SELECT id, email, name, photo, description FROM users;'
+        const sql = 'SELECT id, email, name FROM users;'
 
         const [rows] = await connection.query(sql)
         return rows
@@ -34,32 +34,6 @@ const interactions = {
         }
 
     }
-
-    /*async login(email, password) {
-        const connection = await db.connect()
-
-        const [dbPass] = await connection.query('SELECT password FROM users WHERE email = ?', email)
-
-
-        const hash = dbPass[0].password
-        console.log(password, hash)
-
-        await bcrypt.compare(password, hash).then(async (resp) => {
-            console.log(resp)
-            if (resp) {
-                const sql = 'SELECT id, name, email, photo, description FROM users WHERE email= ?;'
-
-                const [userData] = await connection.query(sql, email)
-
-                console.log(userData)
-
-                return userData
-            } else {
-                return false
-            }
-        })
-
-    }*/
 
 
 }
