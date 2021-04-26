@@ -6,10 +6,10 @@ async function connect(){
     if(global.connection && global.connection.state !== 'disconnected') return global.connection
 
     const connection = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'auther'
+        host: 'remotemysql.com',
+        user: 'HCzqH6c6AM',
+        password: 'agKX8a5sa5',
+        database: 'HCzqH6c6AM'
     })
 
     console.log('connection ready!')
