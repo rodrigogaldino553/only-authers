@@ -1,12 +1,9 @@
 const db = require('../../database/db-interactions')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const jwt = require('./jwt')
 const authConfig = require('../../../config/auth.json')
 
-function generateToken(params = {}) {
-    const token = jwt.sign({ params }, authConfig.secret, { expiresIn: 86400 })
-    return token
-}
+
 
 
 module.exports = {
@@ -31,7 +28,7 @@ module.exports = {
             
             const user = await db.getUser('email', email)
             console.log(user)
-            const token = generateToken({ id: user.id })
+            const token = jwt.generateToken({ id: user.id })
             return res.status(200).json({ message: 'User saved on database!', token: token })
         } catch (error) {
             console.log(error)
@@ -50,7 +47,7 @@ module.exports = {
 
             if (isMatch) {
                 //here go the code to generate the jwt code and put it on the response
-                const token = generateToken({ id: user.id })
+                const token = jwt.generateToken({ id: user.id })
                 console.log(token)
                 return res.status(200).json({ message: 'User authenticated, ', token: token })
             } else {
