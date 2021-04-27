@@ -6,13 +6,20 @@ const userRoutes = require('./routes/routes')
 const PORT = process.env.PORT || '8080'
 
 
-server.use(parser.json())
-server.use(parser.urlencoded({ extended: false }))
+const nunjucks = require('nunjucks')
+nunjucks.configure('src/views', {
+    express:server,
+    noCache:true
+})
+
+server.use(express.json())
+server.use(express.urlencoded({ extended: false }))
+server.use(express.static('public'))
 
 userRoutes(server)
 require('./app/controllers/ProjectController')(server)
 server.get('/', (req, res) => {
-    return res.status(200).json({ message: 'Welcome :)' })
+    return res.status(200).render('landing-page.html')
 })
 server.listen(PORT, () => { console.log(`working on ${PORT}`) })
 
