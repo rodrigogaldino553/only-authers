@@ -7,11 +7,12 @@ module.exports = {
     async getAllUsers(req, res) {
         try {
             const users = await db.selectUsers()
-            return res.status(200).send(users)
+            //return res.status(200).send(users)
+            return res.redirect('/error?status=503&message=ERRO! Não foi possível pegar informações do banco de dados')
 
         } catch (error) {
             console.log(error)
-            return res.status(403).json({ message: 'ERROR! Was not possible get users from database!' })
+            return res.status(503).render('error.html', { status: '503', message: 'ERROR! Was not possible get users from database!' })
         }
 
     },
