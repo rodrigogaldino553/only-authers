@@ -18,9 +18,16 @@ server.use(express.static('public'))
 
 userRoutes(server)
 require('./app/controllers/ProjectController')(server)
-server.get('/', (req, res) => {
+server.get('/', async(req, res) => {
     return res.status(200).render('landing-page.html')
 })
+
+server.get('/error', async(req, res) => {
+    const query = req.query
+    return res.status(200).render('error.html', { status: query.status, message: query.message })
+
+})
+
 server.listen(PORT, () => { console.log(`working on ${PORT}`) })
 
 

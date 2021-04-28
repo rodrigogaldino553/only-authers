@@ -1,0 +1,23 @@
+
+.content .error{
+    font-family: 'Roboto';
+    width: 80%;
+    text-align: center;
+    color: white;
+    background: #202024;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    padding: 40px 5px;
+}
+
+.content .error hr{
+    height: 2px;
+    width: 90%;
+    background: #464647;
+}

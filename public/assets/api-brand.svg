@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="401px" height="46px" viewBox="0 0 401 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>${API Rest Week}</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="48" font-family="AvenirNext-Bold, Avenir Next" font-weight="bold">
+        <g id="landing-page" transform="translate(-53.000000, -57.000000)">
+            <text id="${API-Rest-Week}">
+                <tspan x="52.072" y="95" fill="#8733E1">${</tspan>
+                <tspan x="99.496" y="95" fill="#00D059">API Rest</tspan>
+                <tspan x="292.84" y="95" fill="#FFFFFF"> Week</tspan>
+                <tspan x="437.512" y="95" fill="#7E2FD1">}</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
