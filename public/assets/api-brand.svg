@@ -9,7 +9,7 @@
             <text id="${API-Rest-Week}">
                 <tspan x="52.072" y="95" fill="#8733E1">${</tspan>
                 <tspan x="99.496" y="95" fill="#00D059">API Rest</tspan>
-                <tspan x="292.84" y="95" fill="#FFFFFF"> Week</tspan>
+                <tspan x="307.84" y="95" fill="#FFFFFF"> Week</tspan>
                 <tspan x="437.512" y="95" fill="#7E2FD1">}</tspan>
             </text>
         </g>

@@ -55,7 +55,8 @@ module.exports = {
             }
         } catch (error) {
             console.log(error)
-            return res.status(403).json({ message: 'ERROR! Was not possible check database!' })
+            return res.redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
+
         }
     }
 } // => app.use('/auth', router)
