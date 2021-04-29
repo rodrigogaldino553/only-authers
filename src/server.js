@@ -28,6 +28,8 @@ server.get('/error', async(req, res) => {
 
 })
 
+server.use((req, res, next) => {return res.redirect('/error?status=404&message=Página não encontrada')})
+
 server.listen(PORT, () => { console.log(`working on ${PORT}`) })
 
 

@@ -1,7 +1,7 @@
 
 .content .error{
     font-family: 'Roboto';
-    width: 80%;
+    max-width: 80%;
     text-align: center;
     color: white;
     background: #202024;
@@ -13,7 +13,7 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 4px;
-    padding: 40px 5px;
+    padding: 40px 20px;
 }
 
 .content .error hr{
