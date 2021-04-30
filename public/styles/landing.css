@@ -1,0 +1,131 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-top: 100px;
+}
+
+.content .informations {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .informations .brand {
+    margin-bottom: 70px;
+}
+
+.content .informations .stamps {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-arounds;
+}
+
+.content .informations .stamps .styles_bannerInfo__3HiwY {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 35px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: var(--color-ground-elements);
+}
+
+.content .informations .stamps .styles_bannerInfo__3HiwY span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+    color: var(--color-green);
+}
+
+.content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-ground-elements);
+    border-radius: 8px;
+    padding: 50px;
+    color: whitesmoke;
+}
+
+.content form h4 {
+    margin-bottom: 30px;
+}
+
+.content form input {
+    background: var(--color-ground);
+    margin-top: 10px;
+    padding: 20px 20px;
+    width: 280px;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    color: whitesmoke;
+    transition: .4s;
+}
+
+.content form input:hover {
+    background: black;
+    color: whitesmoke;
+    outline: 1px solid var(--color-purple);
+}
+
+.content form input:focus {
+    outline: 1px solid var(--color-purple);
+}
+
+.content form button {
+    width: 280px;
+    padding: 10px;
+    margin-top: 20px;
+    color:white;
+    background: var(--color-green);
+    font-size: 24px;
+    font-weight: 600px;
+    transition: .4s;
+    border: none;
+    border-radius: 8px;
+}
+
+.content form button:hover {
+    background: var(--color-ground);
+    padding: 9px 0;
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+}
+
+@media(max-width: 1000px) {
+    .content {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .content .informations {
+        width: 95%;
+    }
+    .content .informations .stamps .styles_bannerInfo__3HiwY {
+        padding: 0;
+    }
+    .content .informations .stamps .styles_bannerInfo__3HiwY+.styles_bannerInfo__3HiwY+.styles_bannerInfo__3HiwY {
+        display: none;
+    }
+    .content form {
+        margin-top: 50px;
+        padding: 50px 15px;
+        border-radius: 8px 8px 0 0;
+    }
+}

@@ -19,12 +19,12 @@ server.use(express.static('public'))
 userRoutes(server)
 require('./app/controllers/ProjectController')(server)
 server.get('/', async(req, res) => {
-    return res.status(200).render('landing-page.html')
+    return res.redirect('/landing')
 })
 
 server.get('/error', async(req, res) => {
     const query = req.query
-    return res.status(200).render('error.html', { status: query.status, message: query.message })
+    return res.status(query.status).render('error.html', { status: query.status, message: query.message })
 
 })
 

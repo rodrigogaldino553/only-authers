@@ -39,7 +39,10 @@ module.exports = {
 
     },
 
-    
+    async landing(req, res) {
+        const query = req.query
+        return res.status(200).render('landing-page.html', { status: query.status, message: query.message })
+    }
 
 
 }

@@ -4,16 +4,22 @@ const authController = require('../app/controllers/AuthController')
 
 const routes = (server) => {
 
+    server.route('/landing')
+        .get((req, res) => { userController.landing(req, res) })
+        
     server.route('/register')
-        .post((req, res) => {authController.registerUser(req, res)})
+        .post((req, res) => { authController.registerUser(req, res) })
 
     server.route('/getUsers')
-        .get((req, res) => {userController.getAllUsers(req, res)})
+        .get((req, res) => { userController.getAllUsers(req, res) })
 
-        .post((req, res) => {userController.getUser(req, res)})
+        .post((req, res) => { userController.getUser(req, res) })
 
     server.route('/login')
-        .post((req, res) => {authController.login(req, res)})
+        .post((req, res) => { authController.login(req, res) })
+
+    
+    
 
 }
 
