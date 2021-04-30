@@ -18,10 +18,10 @@ module.exports = {
                 const exist = await db.getUser('email', email)
 
                 if (exist) {
-                    return res.status(403).json({ error: 'email already exists!' })
+                    return res.status(403).redirect('/landing?message=email already exists!&status=403')
                 }
             }catch(error){
-                console.log('email do not exists')
+                console.log(error)
             }
 
             await db.createUser(userData)
@@ -29,10 +29,10 @@ module.exports = {
             const user = await db.getUser('email', email)
             console.log(user)
             const token = jwt.generateToken({ id: user.id })
-            return res.status(200).json({ message: 'User saved on database!', token: token })
+            return res.status(200).redirect('/apirw/home?message=Dados salvos com sucesso!&status=200&token='+token)
         } catch (error) {
             console.log(error)
-            return res.status(403).json({ error: 'ERROR! Was not possible save user on database!' })
+            return res.status(403).redirect('/?message=ERRO! Não foi possível salvar dados no banco de dados!&status=500')
         }
 
     },

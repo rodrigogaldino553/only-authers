@@ -19,7 +19,7 @@ router.get('/home', (req, res) => {
 })
 
 
-module.exports = app => app.use('/authorizated', router)
+module.exports = app => app.use('/apirw', router)
 
 
 
