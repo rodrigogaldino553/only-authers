@@ -13,7 +13,7 @@ function alert() {
 function showAlert(message, status){
     let state = 'primary'
 
-    state = status >= 200 && status < 400 ? 'succes' : 'danger'
+    state = status >= 200 && status < 400 ? 'success' : 'danger'
 
     body.innerHTML += `<div class="alert alert-${state} custom-alert" role="alert">
         ${message}
