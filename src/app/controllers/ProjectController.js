@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/home', (req, res) => {
-    res.send('You are at home')
+    return res.render('home.html')
 })
 
 

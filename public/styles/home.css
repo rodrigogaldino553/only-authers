@@ -1,0 +1,103 @@
+body{
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+}
+
+.content{
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.content .brand{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.content h3{
+    font-weight: 600;
+    color: white;
+}
+
+.content h6{
+    color: white;
+}
+
+.content .video-class{
+    display: flex;
+    flex-direction: column;
+}
+
+.content .video-class h3{
+    margin: 20px 0 10px 0;
+}
+
+.content .video-class iframe{
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.content .video-class iframe:hover{
+    outline: 1px solid var(--color-green);
+}
+
+.content .classes{
+    border-radius: 8px;
+    background: var(--color-ground-elements);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content .classes h3{
+    margin: 20px auto 40px auto;
+}
+
+.content .classes ul{
+    padding: 0;
+}
+
+.content .classes ul li{
+    list-style-type: none;
+    background: #29292e;
+    padding: 15px 10px;
+    margin: 15px 0;
+    border-radius: 4px;
+    box-shadow: 1px 2px 5px #29292e92;
+    transition: .4s;
+}
+
+.content .classes ul li:hover{
+    background-color: var(--color-ground);
+    outline: 1px solid var(--color-purple);
+}
+
+.content .classes ul li a{
+    font-family: "Poppins";
+    font-size: 18px;
+    text-decoration: none;
+    color: whitesmoke;
+
+}
+
+@media (max-width: 1000px) {
+    .content{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .content .classes{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 640px) {
+    .content .video-class iframe{
+        width: 320;
+        height: 240;
+    }
+}

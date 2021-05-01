@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#202024">
     <title>API Rest Week - Login</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,8 +26,8 @@
 
         <form action="/login" method="post">
             <h4>Bem-Vindo de volta</h4>
-            <input type="email" name="email" placeholder="E-mail" maxlength="45">
-            <input type="password" name="password" placeholder="password" maxlength="45">
+            <input type="email" name="email" placeholder="E-mail" maxlength="45" required>
+            <input type="password" name="password" placeholder="password" maxlength="45" required>
             <button type="submit">Entrar</button>
             <span>ainda não tem uma conta? <a href="/register">crie já!</a></span>
         </form>
