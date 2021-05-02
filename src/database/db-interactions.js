@@ -22,12 +22,12 @@ const interactions = {
         return rows
     },
 
-    async getUser(mode, value) {
+    async getUser(value) {
         const connection = await db.connect()
-        const sql = `SELECT * FROM users WHERE ${mode}="${value}";`
-        const values = [mode, value]
+        const sql = 'SELECT * FROM users WHERE email= ?;'
+        
         try {
-            const [rows] = await connection.query(sql)
+            const [rows] = await connection.query(sql, value)
             return rows[0]
         } catch (error) {
             console.log(error)
