@@ -2,6 +2,7 @@ const db = require('../../database/db-interactions')
 const bcrypt = require('bcryptjs')
 const jwt = require('./jwt')
 const authConfig = require('../../../config/auth.json')
+const db_config = require('../../database/db-config')
 
 
 
@@ -18,18 +19,18 @@ module.exports = {
                 const exist = await db.getUser('email', email)
 
                 if (exist) {
-                    return res.status(403).redirect('/landing?message=email already exists!&status=403')
+                    return res.status(403).redirect('/landing?message=Esse email já esta cadastrado!&status=403')
                 }
-            }catch(error){
+            } catch (error) {
                 console.log(error)
             }
 
             await db.createUser(userData)
-            
+
             const user = await db.getUser('email', email)
-            console.log(user)
+            
             const token = jwt.generateToken({ id: user.id })
-            return res.status(200).redirect('/apirw/home?message=Dados salvos com sucesso!&status=200&token='+token)
+            return res.status(200).redirect('/apirw/home?message=Dados salvos com sucesso!&status=200&token=' + token)
         } catch (error) {
             console.log(error)
             return res.status(403).redirect('/?message=ERRO! Não foi possível salvar dados no banco de dados!&status=500')
@@ -38,13 +39,25 @@ module.exports = {
     },
 
     async login(req, res) {
-        const { email, password } = req.body
+        
 
         try {
-            const user = await db.getUser('email', email)
+            let isMatch = false
+            let user = null
+            try {
+                const { email, password } = req.body
+    
+                user = await db.getUser('email', email)
 
-            const isMatch = bcrypt.compareSync(password, user.password)
+                console.log(user)
+                isMatch = bcrypt.compareSync(password, user.password)
 
+            } catch (error) {
+                console.log(error)
+                return res.redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
+    
+            }
+            
             if (isMatch) {
                 //here go the code to generate the jwt code and put it on the response
                 const token = jwt.generateToken({ id: user.id })
@@ -53,10 +66,11 @@ module.exports = {
             } else {
                 return res.status(404).json({ message: 'ERROR! password or user is wrong!' })
             }
-        } catch (error) {
+
+        }catch(error){
             console.log(error)
             return res.redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
-
+ 
         }
     }
 } // => app.use('/auth', router)
