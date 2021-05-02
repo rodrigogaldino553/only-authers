@@ -5,7 +5,7 @@ const jwt = require('./jwt')
 const router = express.Router()
 
 
-router.use(authMiddleware)
+//router.use(authMiddleware)
 
 router.get('/', (req, res) => {
     const token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers.authorization
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/home', (req, res) => {
-    res.send('You are at home')
+    return res.render('home.html')
 })
 
 
