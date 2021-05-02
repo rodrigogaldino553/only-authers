@@ -19,7 +19,7 @@ module.exports = {
                 const exist = await db.getUser('email', email)
 
                 if (exist) {
-                    return res.status(403).redirect('/landing?message=Esse email já esta cadastrado!&status=403')
+                    return res.status(403).redirect('/register?message=Esse email já esta cadastrado!&status=403')
                 }
             } catch (error) {
                 console.log(error)
@@ -47,7 +47,7 @@ module.exports = {
             try {
                 const { email, password } = req.body
     
-                user = await db.getUser('email', email)
+                user = await db.getUser(email)
 
                 console.log(user)
                 isMatch = bcrypt.compareSync(password, user.password)
@@ -64,7 +64,7 @@ module.exports = {
                 console.log(token)
                 return res.status(200).json({ message: 'User authenticated, ', token: token })
             } else {
-                return res.status(404).json({ message: 'ERROR! password or user is wrong!' })
+                return res.redirect('/login?message=Usuário ou senha incorretos!&status=403')
             }
 
         }catch(error){
