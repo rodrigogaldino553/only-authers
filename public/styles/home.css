@@ -1,4 +1,4 @@
-body{
+body {
     font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
@@ -6,98 +6,139 @@ body{
     padding-top: 0px;
 }
 
-.content{
+.content {
     justify-content: space-around;
     margin-top: 60px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 95%;
+    overflow-x: hidden;
 }
 
-.content .brand{
+.content .brand {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.content h3{
+.content h3 {
     font-weight: 600;
     color: white;
 }
 
-.content h6{
+.content h6 {
     color: white;
 }
 
-.content .video-class{
+.content .video-class {
     display: flex;
     flex-direction: column;
 }
 
-.content .video-class h3{
+.content .video-class h3 {
     margin: 20px 0 10px 0;
 }
 
-.content .video-class iframe{
+.content .video-class iframe {
     border-radius: 8px;
     transition: .4s;
 }
 
-.content .video-class iframe:hover{
+.content .video-class iframe:hover {
     outline: 1px solid var(--color-green);
 }
 
-.content .classes{
+.content .classes {
     border-radius: 8px;
     background: var(--color-ground-elements);
-    padding: 20px;
+    padding: 20px 20px 5px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.content .classes h3{
-    margin: 20px auto 40px auto;
+.content .classes h3 {
+    margin: 20px auto 25px auto;
 }
 
-.content .classes ul{
+.content .classes ul {
     padding: 0;
 }
 
-.content .classes ul li{
+.content .classes ul li {
     list-style-type: none;
     background: #29292e;
     padding: 15px 10px;
-    margin: 15px 0;
+    margin: 25px 0;
     border-radius: 4px;
     box-shadow: 1px 2px 5px #29292e92;
     transition: .4s;
 }
 
-.content .classes ul li:hover{
+.content .classes ul li:hover {
     background-color: var(--color-ground);
     outline: 1px solid var(--color-purple);
 }
 
-.content .classes ul li a{
+.content .classes ul li a {
     font-family: "Poppins";
     font-size: 18px;
     text-decoration: none;
     color: whitesmoke;
+}
 
+@media (max-width: 1080px){
+    .content .video {
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;
+    }
+    .content .video iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }   
 }
 
 @media (max-width: 1000px) {
-    .content{
+    .content {
         flex-direction: column;
         margin-top: 10px;
     }
-
-    .content .classes{
+    .content .video {
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;
+    }
+    .content .video iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .content .classes {
         margin-top: 100px;
     }
 }
 
 @media (max-width: 640px) {
-    .content .video-class iframe{
-        width: 320;
-        height: 240;
+    .content .video {
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;
+        
+    }
+    .content .video iframe {
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 8px;
     }
 }
