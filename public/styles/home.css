@@ -18,7 +18,6 @@ body {
 
 .content .brand {
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .content h3 {
@@ -33,15 +32,27 @@ body {
 .content .video-class {
     display: flex;
     flex-direction: column;
+    width: min-content;
 }
 
 .content .video-class h3 {
     margin: 20px 0 10px 0;
+    width: max-content;
+}
+
+.content .video-class h6{
+    text-align: justify;
+    color: rgba(245, 245, 245, 0.668);
+    margin-bottom: 50px;
 }
 
 .content .video-class iframe {
     border-radius: 8px;
     transition: .4s;
+}
+
+.content .video-class .video{
+    width: min-content;
 }
 
 .content .video-class iframe:hover {
@@ -74,6 +85,7 @@ body {
     border-radius: 4px;
     box-shadow: 1px 2px 5px #29292e92;
     transition: .4s;
+    cursor: pointer;
 }
 
 .content .classes ul li:hover {
@@ -85,6 +97,10 @@ body {
     font-family: "Poppins";
     font-size: 18px;
     text-decoration: none;
+    color: whitesmoke;
+}
+
+.content .classes ul li a:hover{
     color: whitesmoke;
 }
 
