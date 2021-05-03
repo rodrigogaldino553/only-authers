@@ -49,7 +49,7 @@ module.exports = {
     
                 user = await db.getUser(email)
 
-                console.log(user)
+                //console.log(user)
                 isMatch = bcrypt.compareSync(password, user.password)
 
             } catch (error) {
@@ -61,8 +61,12 @@ module.exports = {
             if (isMatch) {
                 //here go the code to generate the jwt code and put it on the response
                 const token = jwt.generateToken({ id: user.id })
-                console.log(token)
-                return res.status(200).json({ message: 'User authenticated, ', token: token })
+                //console.log(token)
+                return res.cookie("Bearer ", token,{
+                    httpOnly: true,
+                    sameSite: "strict"
+                }).redirect('/apirw/home?message=Bem-Vindo&status=200')
+                //return res.status(200).json({ message: 'User authenticated, ', token: token })
             } else {
                 return res.redirect('/login?message=Usuário ou senha incorretos!&status=403')
             }
