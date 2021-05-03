@@ -3,12 +3,12 @@ const authConfig = require('../../../config/auth.json')
 
 
 module.exports = (req, res, next) => {
-    const authHeader = req.headers.authorization
+    const authHeader = req.headers.cookie || req.headers.authorization || req.body.token || req.headers['x-acccess-token']
 
     if(!authHeader)
         return res.status(401).send('Do not has a token');
     
-    const parts = authHeader.split(' ')
+    const parts = authHeader.split('=')
 
     if(!parts.length === 2)
         return res.status(401).send('token error');
