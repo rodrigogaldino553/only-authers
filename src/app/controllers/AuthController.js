@@ -30,7 +30,10 @@ module.exports = {
             const user = await db.getUser(email)
             
             const token = jwt.generateToken({ id: user.id })
-            return res.redirect('/apirw/home?message=Dados salvos com sucesso!&status=200&token=' + token)
+            return res.cookie("Bearer ", token,{
+                httpOnly: true,
+                sameSite: "strict"
+            }).redirect('/apirw/home?message=Dados salvos com sucesso!&status=200')
         } catch (error) {
             console.log(error)
             return res.status(403).redirect('/?message=ERRO! Não foi possível salvar dados no banco de dados!&status=500')
