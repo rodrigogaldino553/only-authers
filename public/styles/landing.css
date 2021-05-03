@@ -26,6 +26,10 @@ body{
     margin-bottom: 70px;
 }
 
+.content .informations h1{
+    text-align: unset;
+}
+
 .content .informations .stamps {
     margin-top: 40px;
     display: flex;
