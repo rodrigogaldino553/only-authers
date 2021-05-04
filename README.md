@@ -38,6 +38,6 @@ https://auther-test.herokuapp.com
   
 ## Feedback
 
-If you have any feedback, please reach out to us at galdiorodrigo553@.com
+If you have any feedback, please reach out to us at galdiorodrigo553@gmail.com
 
   
