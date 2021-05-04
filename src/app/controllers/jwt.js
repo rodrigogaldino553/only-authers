@@ -18,7 +18,8 @@ module.exports = {
     },
 
     generateToken(params = {}) {
-        const token = jwt.sign({ params }, authConfig.secret, { expiresIn: 86400 })
+        const aDay = 86400 // time in seconds for a day
+        const token = jwt.sign({ params }, authConfig.secret, { expiresIn: aDay })
         return token
     }
 

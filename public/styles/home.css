@@ -27,12 +27,12 @@ body {
 
 .content h6 {
     color: white;
+    width: 70%;
 }
 
 .content .video-class {
     display: flex;
     flex-direction: column;
-    width: min-content;
 }
 
 .content .video-class h3 {
@@ -51,10 +51,6 @@ body {
     transition: .4s;
 }
 
-.content .video-class .video{
-    width: min-content;
-}
-
 .content .video-class iframe:hover {
     outline: 1px solid var(--color-green);
 }
@@ -67,8 +63,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    width: 800px;
 }
-
 .content .classes h3 {
     margin: 20px auto 25px auto;
 }
@@ -105,8 +101,11 @@ body {
 }
 
 @media (max-width: 1080px){
+    .content .video-class h6{
+        width: 90%;
+    }
     .content .video {
-        width: 100%;
+        width: 80%;
         padding-top: 56.25%;
         position: relative;
     }
@@ -116,12 +115,17 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-    }   
+    }  
+
+    .content .classes{
+        width: unset;
+    }
 }
 
 @media (max-width: 1000px) {
     .content {
         flex-direction: column;
+        align-items: center;
         margin-top: 10px;
     }
     .content .video {
@@ -142,6 +146,14 @@ body {
 }
 
 @media (max-width: 640px) {
+    .content .video-class h3{
+        width: unset;
+    }
+
+    .content .video-class h6{
+        padding-left: 30px;
+    }
+
     .content .video {
         width: 100%;
         padding-top: 56.25%;
