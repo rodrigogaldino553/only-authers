@@ -27,7 +27,6 @@ body {
 
 .content h6 {
     color: white;
-    width: 70%;
 }
 
 .content .video-class {
@@ -37,22 +36,18 @@ body {
 
 .content .video-class h3 {
     margin: 20px 0 10px 0;
-    width: max-content;
+    text-align: left;
 }
 
 .content .video-class h6{
     text-align: justify;
     color: rgba(245, 245, 245, 0.668);
-    margin-bottom: 50px;
+    width:80%;
 }
 
 .content .video-class iframe {
     border-radius: 8px;
     transition: .4s;
-}
-
-.content .video-class iframe:hover {
-    outline: 1px solid var(--color-green);
 }
 
 .content .classes {
@@ -63,7 +58,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 800px;
+    min-width: 400px;
 }
 .content .classes h3 {
     margin: 20px auto 25px auto;
