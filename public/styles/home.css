@@ -143,6 +143,7 @@ body {
 @media (max-width: 640px) {
     .content .video-class h3{
         width: unset;
+        text-align:center;
     }
 
     .content .video-class h6{
@@ -164,4 +165,8 @@ body {
         transform: translateX(-50%);
         border-radius: 8px;
     }
+    .content .classes{
+        min-width: 320px;
+        max-width: 400px;
+}
 }
