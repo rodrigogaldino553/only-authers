@@ -40,7 +40,7 @@ body {
 }
 
 .content .video-class h6{
-    text-align: justify;
+    text-align: left;
     color: rgba(245, 245, 245, 0.668);
     width:80%;
 }
