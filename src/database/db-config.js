@@ -6,10 +6,10 @@ async function connect(){
     if(global.connection && global.connection.state !== 'disconnected') return global.connection
 
     const connection = mysql.createPool ({
-        host: 'remotemysql.com',
-        user: 'HCzqH6c6AM',
-        password: 'agKX8a5sa5',
-        database: 'HCzqH6c6AM'
+        host: process.env.MYSQL_HOST,
+        user: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PASSWORD,
+        database: process.env.MYSQL_DATABASE
     })
 
     console.log('connection ready!')
