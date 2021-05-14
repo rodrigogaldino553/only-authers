@@ -30,6 +30,7 @@ const interactions = {
             return rows[0]
         } catch (error) {
             console.log(error)
+            return error
         }
 
     }

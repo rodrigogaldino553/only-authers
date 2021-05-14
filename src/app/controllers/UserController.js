@@ -10,7 +10,7 @@ module.exports = {
             return res.status(200).send(users)
             
         } catch (error) {
-            console.log(error)
+            return res.send(error)
             return res.redirect('/error?status=503&message=Não foi possível pegar informações do banco de dados')
 
         }
@@ -21,7 +21,6 @@ module.exports = {
         const { mode, value } = req.body
 
         try {
-            console.log(mode, value)
             const user = await db.getUser(mode, value)
 
             if (user) {
