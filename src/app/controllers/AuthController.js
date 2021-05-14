@@ -40,8 +40,6 @@ module.exports = {
     },
 
     async login(req, res) {
-        
-
         try {
             let isMatch = false
             let user = null
@@ -54,7 +52,7 @@ module.exports = {
 
             } catch (error) {
                 console.log(error)
-                return res.redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
+                return res.send(error)//redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
     
             }
             
