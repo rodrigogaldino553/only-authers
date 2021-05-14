@@ -1,5 +1,4 @@
 const db = require('./db-config')
-const bcrypt = require('bcryptjs')
 
 
 const interactions = {

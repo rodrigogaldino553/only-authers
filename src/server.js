@@ -2,16 +2,16 @@ const express = require('express')
 const server = express()
 const parser = require('body-parser')
 const userRoutes = require('./routes/routes')
+require('dotenv/config')
 
 const PORT = process.env.PORT || '8080'
-
-
+                         
 const nunjucks = require('nunjucks')
 nunjucks.configure('src/views', {
     express:server,
     noCache:true
-})
-
+})                                            
+        
 server.use(express.json())
 server.use(express.urlencoded({ extended: false }))
 server.use(express.static('public'))

@@ -1,8 +1,6 @@
 const db = require('../../database/db-interactions')
 const bcrypt = require('bcryptjs')
 const jwt = require('./jwt')
-const authConfig = require('../../../config/auth.json')
-const db_config = require('../../database/db-config')
 
 
 
@@ -16,7 +14,7 @@ module.exports = {
         try {
             //toda a interacao com o db
             try {
-                const exist = await db.getUser('email', email)
+                const exist = await db.getUser(email)
 
                 if (exist) {
                     return res.status(403).redirect('/register?message=Esse email já esta cadastrado!&status=403')
@@ -49,10 +47,9 @@ module.exports = {
             let user = null
             try {
                 const { email, password } = req.body
-    
+                    
                 user = await db.getUser(email)
 
-                //console.log(user)
                 isMatch = bcrypt.compareSync(password, user.password)
 
             } catch (error) {
