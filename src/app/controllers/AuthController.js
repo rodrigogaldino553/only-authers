@@ -52,7 +52,7 @@ module.exports = {
 
             } catch (error) {
                 console.log(error)
-                return res.send(error)//redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
+                return res.redirect('/error?status=503&message=ERRO! Não foi possível acessar banco de dados')
     
             }
             
