@@ -2,14 +2,14 @@ const mysql = require('mysql2/promise')
 require('dotenv/config')
 
 
-const host = toString(process.env.MYSQL_HOST)
-const user = toString(process.env.MYSQL_USER)
+const host = process.env.MYSQL_HOST
+const user = process.env.MYSQL_USER
 
 const database = {host: host,//process.env.MYSQL_HOST,
         user: user, //process.env.MYSQL_USER,
         password: 'agKX8a5sa5',//process.env.MYSQL_PASSWORD,
         database: 'HCzqH6c6AM'}//process.env.MYSQL_DATABASE}
-console.log(process.env.MYSQL_HOST, user)
+console.log(process.env.MYSQL_HOST, toString(user))
 async function connect(){
 
     if(global.connection && global.connection.state !== 'disconnected') return global.connection
