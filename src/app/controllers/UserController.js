@@ -6,12 +6,11 @@ module.exports = {
 
     async getAllUsers(req, res) {
         try {
-            console.log('we get in go!')
             const users = await db.selectUsers()
             return res.status(200).send(users)
             
         } catch (error) {
-            console.log(error)
+            return res.send(error)
             return res.redirect('/error?status=503&message=Não foi possível pegar informações do banco de dados')
 
         }
