@@ -14,7 +14,6 @@ const interactions = {
     },
 
     async selectUsers() {
-        console.log('arrives on select')
         const connection = await db.connect()
         const sql = 'SELECT id, email, name FROM users;'
 
@@ -24,6 +23,7 @@ const interactions = {
 
     async getUser(value) {
         const connection = await db.connect()
+        console.log(connection)
         const sql = 'SELECT * FROM users WHERE email= ?;'
         
         try {
