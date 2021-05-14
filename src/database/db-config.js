@@ -9,7 +9,7 @@ const database = {host: process.env.MYSQL_HOST,
 async function connect(){
 
     if(global.connection && global.connection.state !== 'disconnected') return global.connection
-console.log(database)
+
     const connection = mysql.createPool (database)
 
     console.log('connection ready!')
