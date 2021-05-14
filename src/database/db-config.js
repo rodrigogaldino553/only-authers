@@ -4,12 +4,14 @@ require('dotenv/config')
 
 const host = process.env.MYSQL_HOST
 const user = process.env.MYSQL_USER
+const password = process.env.MYSQL_PASSWORD
+const database = process.env.MYSQL_DATABASE
 
 const database = {host: host,//process.env.MYSQL_HOST,
         user: user, //process.env.MYSQL_USER,
-        password: 'agKX8a5sa5',//process.env.MYSQL_PASSWORD,
-        database: 'HCzqH6c6AM'}//process.env.MYSQL_DATABASE}
-console.log(process.env.MYSQL_HOST, typeof(user))
+        password: password,//process.env.MYSQL_PASSWORD,
+        database: database}//process.env.MYSQL_DATABASE}
+console.log(host, user, password, database)
 async function connect(){
 
     if(global.connection && global.connection.state !== 'disconnected') return global.connection
