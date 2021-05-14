@@ -23,7 +23,6 @@ const interactions = {
 
     async getUser(value) {
         const connection = await db.connect()
-        console.log(connection)
         const sql = 'SELECT * FROM users WHERE email= ?;'
         
         try {
@@ -31,6 +30,7 @@ const interactions = {
             return rows[0]
         } catch (error) {
             console.log(error)
+            return error
         }
 
     }
