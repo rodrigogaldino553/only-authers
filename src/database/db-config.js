@@ -2,8 +2,8 @@ const mysql = require('mysql2/promise')
 require('dotenv/config')
 
 
-const host = process.env.MYSQL_HOST
-const user = process.env.MYSQL_USER
+const host = toString(process.env.MYSQL_HOST)
+const user = toString(process.env.MYSQL_USER)
 
 const database = {host: host,//process.env.MYSQL_HOST,
         user: user, //process.env.MYSQL_USER,
