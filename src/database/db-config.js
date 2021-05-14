@@ -11,8 +11,7 @@ async function connect(){
     if(global.connection && global.connection.state !== 'disconnected') return global.connection
 
     const connection = mysql.createPool (database)
-    const [rows] = await connection.query('SELECT * FROM users')
-console.log(rows)
+    
     console.log('connection ready!')
     global.connection = connection
 
