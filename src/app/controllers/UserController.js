@@ -21,7 +21,6 @@ module.exports = {
         const { mode, value } = req.body
 
         try {
-            console.log(mode, value)
             const user = await db.getUser(mode, value)
 
             if (user) {
