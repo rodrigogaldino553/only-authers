@@ -19,7 +19,7 @@ server.use(express.static('public'))
 userRoutes(server)
 require('./app/controllers/ProjectController')(server)
 server.get('/', async(req, res) => {
-    return res.send(process.env.MYSQL_HOST)//res.redirect('/register')
+    return res.send(process.env.MYSQL_DATABASE)//res.redirect('/register')
 })
 
 server.get('/error', async(req, res) => {
