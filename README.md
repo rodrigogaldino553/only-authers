@@ -14,7 +14,7 @@ It's an application like Next Level Week, where users can sign up your data on d
   
 ## Demo
 
-https://auther-test.herokuapp.com
+https://apirestweek.herokuapp.com
 
   
 ## Tech Stack
